@@ -8,8 +8,8 @@ with specific languages and frameworks. Based on my own needs, likes and experie
   2. Run your config of choice: `mux start pydev`
 
 ##To edit
-  1.Fork this
-  2.Edit your config of choice: `mux edit pydev.yml`
+  1. Fork this
+  2. Edit your config of choice: `mux edit pydev.yml`
   
 ##License
 MIT License
