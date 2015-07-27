@@ -1,16 +1,16 @@
 # ~/.tmuxinator/pydev.yml.yml
 
 name: pydev.yml
-root: ~/
+root: <%= ENV["PWD"] %>
 
 # Optional tmux socket
 # socket_name: foo
 
 # Runs before everything. Use it to start daemons etc.
-# pre: sudo /etc/rc.d/mysqld start
+pre: make init
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-# pre_window: rbenv shell 2.0.0-p247
+pre_window: source activate pydev
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -32,6 +32,6 @@ windows:
       layout: main-vertical
       panes:
         - vim
-        - guard
-  - server: bundle exec rails s
+        - make watch
+  - server: make dev 
   - logs: tail -f log/development.log
